@@ -12,7 +12,7 @@ const hbs = require('hbs');
 const paypal = require('paypal-rest-sdk');
 
 const app = express();
-const mongoURL = "mongodb+srv://deepayun:2UC6FhXC6BAZ5yO6@wmc5.2yjabxn.mongodb.net/?retryWrites=true&w=majority&appName=WMC5";
+const mongoURL = "mongodb+srv://deepayun:2UC6FhXC6BAZ5yO6@wmc5.2yjabxn.mongodb.net/GTA5?retryWrites=true&w=majority&appName=WMC5";
 const port = process.env.PORT || 3000;
 
 
