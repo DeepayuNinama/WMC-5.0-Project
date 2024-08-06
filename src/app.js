@@ -12,7 +12,7 @@ const hbs = require('hbs');
 const paypal = require('paypal-rest-sdk');
 
 const app = express();
-const mongoURL = "mongodb://127.0.0.1:27017/GTA5";
+const mongoURL = "mongodb+srv://deepayun:Deepayu@1804@gta.uyc3l4a.mongodb.net/?retryWrites=true&w=majority&appName=GTA";
 const port = process.env.PORT || 3000;
 
 mongoose.connect(mongoURL)
