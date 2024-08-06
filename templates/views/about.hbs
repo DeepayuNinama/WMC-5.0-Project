@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia | About Website</title>
+    <link rel="stylesheet" href="about.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: "IBM Plex Mono", monospace;
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #1A191C;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+    margin-left: -80px;
+    font-weight: 600;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-menu ul{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-menu ul li{
+    list-style-type: none;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 10px;
+    margin: 0 25px;
+    font-family: 'Poppins', sans-serif;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+
+.img1{
+    /* position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 600px;
+    padding-left: 100px;
+    padding-right: 100px; */
+
+    width: 100%;
+    height: 100%;
+    
+}
+
+.heading{
+    margin-top: 180px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.heading h2{
+    color: #fff;
+    font-size: 3rem;
+    transition: .5s ease;
+}
+
+.heading h2:hover{
+    transform: translateY(-4px)
+}
+
+.heading span{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: rgb(194, 194, 194);
+    transition: .5s ease;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-bottom: 50px;
+}
+
+.heading span:hover{
+    color: rgba(158, 158, 158, 0.804);
+}
+.container1{
+    padding-top: 0px;
+    display: flex;
+    column-gap: 50px;
+}
+
+.text-content{
+    padding-left: 80px;
+    padding-top: 120px;
+    margin-left: 20px;
+    
+}
+
+.container1 h2{
+    color: #fff;
+    font-size:3rem;
+    margin-bottom: 50px;
+}
+
+.container1 span{
+    color: rgb(194, 194, 194);
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.img2{
+    position: absolute;
+    right: 15px;
+    width: 45%;
+    color: #318aff;
+    padding-right: 100px;
+
+}
+
+a{
+    color: #fff;
+}
+
+box-icon{
+    margin-top: 5px;
+}
+
+
+
+
+/*  */
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding-top: 100px;
+  }
+  
+  .container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards; 
+    opacity: 0;
+  }
+  @keyframes movedown {
+    0%{
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .container:nth-child(1){
+    animation-delay: 0s;
+  }
+  .container:nth-child(2){
+    animation-delay: 1s;
+  }
+  .container:nth-child(3){
+    animation-delay: 2s;
+  }
+  .container:nth-child(4){
+    animation-delay: 3s;
+  }.container:nth-child(5){
+    animation-delay: 4s;
+  }.container:nth-child(6){
+    animation-delay: 5s;
+  }
+  .text-box {
+    padding: 20px 30px;
+    background: rgba(145, 145, 145, 0.194);
+    backdrop-filter: blur(10px);
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+  .left-container {
+    left: 0;
+  }
+  
+  .right-container {
+    left: 50%;
+  }
+  
+  .container img {
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+  }
+  
+  .right-container img {
+    left: -20px;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #dadadaa7;
+    top: 150px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    animation: movline 5s linear forwards;
+    margin-bottom: 500rem;
+  }
+  
+  @keyframes movline {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 75%;
+    }
+  }
+  
+  .text-box h2 {
+    font-weight: 600;
+  }
+  
+  .text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  .left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+  }
+  
+  .right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -15px;
+  }
+  
+  @media screen and  (max-width:600px){
+     .timeline{
+      margin: 50px auto;
+     }
+     .timeline::after{
+      left:31px;
+     }
+    .container{width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+    }
+    .text-box{
+      font-size: 13px;
+    }
+    .text-box small{
+      margin-bottom: 10px;
+    }
+    .right-container{
+      left: 0;
+    }
+    .left-container img, .right-container img{
+      left:10px;
+    }
+    .left-container-arrow, .right-container-arrow{
+      border-right: 15px solid #fff;
+      border-left: 0;
+      left: -15px;
+    }
+  }
+
+  .timeline h2{
+    color: #fff;
+    background-color: #ffffff00;
+  }
+  p{
+    color: #ffffffd5;
+    background-color: #ffffff00;
+  }
+  .timeline small{
+    color: #7e91ff;
+    background-color: #ffffff00;
+  }
+
+  .p1{
+    background-color: #ffffff00;
+  }
+
+
+
+  .backend-container{
+    padding: 100px;
+    margin-top: 80px;
+    display: flex;
+    column-gap: 80px;
+    margin-top: 125px;
+  }
+  .about3{
+    width: 50%;
+  }
+
+  .text-content2{
+    padding-top: 0px;
+  }
+
+  .text-content2 h1{
+    color: #fff;
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+
+  .text-content2 span{
+    color: #bdbdbd;
+  }
+
+
+
+  .database-container{
+    display: grid;
+    height: 200px;
+    align-self: center;
+    justify-content: center;
+    margin-left: 100px;
+    padding-right: 200px;
+    width: 100%;
+    padding-bottom: 50px;
+    margin-top: 50px;
+
+  }
+
+  .db-content{
+    place-self: left;
+
+  }
+
+  .db-content h1{
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  .db-content span{
+    color: #bdbdbd;
+  }
+  .about4{
+    width: 100%;
+  }
+    </style>
+</head> 
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>Mafia</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="./" class="link" onmousedown="audio.play();">Home</a></li>
+                <li><a href="./login"  class="link" onmousedown="audio.play();">Services</a></li>
+                <li><a href="./creators" class="link" onmousedown="audio.play();">Creators</a></li>
+                <li><a href="#" class="link active" onmousedown="error.play();">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="heading">
+            <h2>Explore the GTA 5</h2>
+            <span>
+                Welcome to our Mafia, A GTA 5 based website<br> where you can experience the underworld. <br><br>
+                This page contains the full documentation of WMC 5.0 project with deep explanation of every feature 
+                and functionality implemented with Frontend, Backend, Framework, UI/UX software & APIs. Mafia website 
+                project was started on 1 July 2024, Designed and Developed to serve the purpose of completing the 
+                required features. You can find this project on GitHub @DeepayuNinama repository named WMC 5.0 
+            </span>
+
+            <img class="img1" src="image/about1.png" alt="">
+        </div>
+
+        <section>
+          <div class="timeline">
+              <div class="container left-container">
+                <img src="image/htmlimg.png" alt="">
+                <div class="text-box">
+                  <h2>HTML</h2>
+                  <small>
+                      Frotnend - Structure
+                  </small>
+                  <p>essay, an analytic, interpretative, or
+                     critical literary composition usually much shorter and less 
+                    systematic and formal than a dissertation or thesis and usually dealing with its subject from a limited and often personal point of view. </p>
+                    <span class="left-container-arrow"></span>
+                </div>
+              </div>
+              <div class="container right-container">
+                <img src="image/cssimg.png" alt="">
+                <div class="text-box">
+                  <h2>CSS</h2>
+                  <small>
+                    Frotnend - Styling
+                  </small>
+                  <p>We utilized CSS to handle all design aspects, including styling, animations, and responsive design, making the site visually appealing and user-friendly across all devices.
+                  </p>
+                    <span class="right-container-arrow"></span>
+                </div>
+              </div>
+          
+              <div class="container left-container">
+                <img src="image/jsimg.png" alt="">
+                <div class="text-box">
+                  <h2>JavaScript</h2>
+                  <small>
+                    Frotnend - unctionality & Parallax
+                  </small>
+                  <p> JavaScript was integral for adding functionality, enabling interactive elements, and ensuring smooth and efficient operation throughout the site.
+                  </p>
+                    <span class="left-container-arrow"></span>
+                </div>
+              </div>
+          
+              <div class="container right-container">
+                <img src="image/expressimg.png" alt="">
+                <div class="text-box">
+                  <h2>Express.js</h2>
+                  <small>
+                    Backend - Routes & Manage Server
+                  </small>
+                  <p>Express.js was used to build both single-page and multi-page applications, efficiently managing servers and routing to handle client requests and deliver content.
+                  </p>
+                    <span class="right-container-arrow"></span>
+                </div>
+              </div>
+          
+              <div class="container left-container">
+                <img src="image/nodeimg.png" alt="">
+                <div class="text-box">
+                  <h2>Node Js</h2>
+                  <small>
+                    Backend - Server
+                  </small>
+                  <p>As a JavaScript runtime environment, Node.js allowed us to execute server-side code, facilitating back-end operations and ensuring high performance and scalability.
+                  </p>
+                    <span class="left-container-arrow"></span>
+                </div>
+              </div>
+          
+          
+              <div class="container right-container">
+                <img src="image/mongodbimg.png" alt="">
+                <div class="text-box">
+                  <h2>MongoDB</h2>
+                  <small>
+                    DataBase - Data Manipulation 
+                  </small>
+                  <p>MongoDB was our choice for the database, enabling us to store and manage product data, sales information, and user login details, ensuring data integrity and fast access for dynamic content. </p>
+                    <span class="right-container-arrow"></span>
+                </div>
+              </div>
+          </div>
+      </section>     
+
+        <div class="container1">
+            
+            <div class="text-content">
+                <h2>Frontend Design <br>& Application</h4>
+                <span>Coding Languages: <br><br>
+                    <box-icon type='logo' name='html5' color='#ff3131' ></box-icon> HTML - Creating page structure. <br>
+                    <box-icon type='logo' name='css3' color='#318aff'></box-icon> CSS - Styling & adding responsiveness.<br>
+                    <box-icon name='javascript' type='logo' color='#ffff4b' ></box-icon> JavaScript - Manipulate content in real-time. <br>
+                </span> 
+
+                <br><br>
+
+                <span> Software Used: <br><br>
+                    <box-icon name='figma' type='logo' color='#ffffff' ></box-icon> Figma - base Template & Graphics. <br>
+                    <box-icon name='adobe' type='logo' color='#f72121' ></box-icon> Photoshop - Creating Art Work. <br>
+                    <box-icon name='visual-studio' type='logo' color='#0077ff' ></box-icon> Visual-Studio Code - Coding 
+                </span>
+
+                <br><br><br>
+
+                <span>Wesbite Tools: <br><br>
+                    <box-icon name='google' type='logo' color='#ffffff' ></box-icon> Google Fonts - Poppins & IBM Plex Mono. <br>
+                    <box-icon name='play'color='#ffffff'></box-icon > Boxicons & Font Awesome - Icons. <br>
+                    <box-icon name='play'color='#ffffff'></box-icon> <a href="https://gtacars.net/">GTA V</a> Inspiration & Image Material.<br>
+                    <box-icon name='play'color='#ffffff'></box-icon> Function12 Plugin - exporting Figma tempates to HTML. <br>
+                    <box-icon name='play'color='#ffffff'></box-icon> <a href="https://getcssscan.com/css-buttons-examples">Buttons</a> Style - Btn Style
+                </span>
+
+            </div>
+
+            <div class="img-content">
+                <img src="image/about2.png"  class="img2" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="backend-container">
+          
+          <img src="image/about3.png" class="about3" alt="">
+
+          <div class="text-content2">
+            <h1>Backend Code</h1>
+                <span>Coding Language: 
+                  <br><br>
+                  <box-icon name='nodejs' type='logo' color='#43ff00' ></box-icon> Node.js Env - Hosted server & Logic scripts. <br>
+                  <box-icon name='javascript' type='logo' color='#f1ff00' ></box-icon>Express - Frame work, Middleware, Routing, Request & Response Object.<br>
+                </span> 
+                <br><br>
+
+                <span>
+                  Features Implimented:
+                  <br><br>
+                  <box-icon name='paypal' type='logo' color='#0051ff' ></box-icon> Payment Gateway (Paypal API) <br>
+                  <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> Authentication with Bcrypt security. <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> User Panel & Admin Panel <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> Purchase & List new Products to the store. <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> List Poruduct with Admin's approval. <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> Place order. <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> Filter, Search & Sort Porducts <br>
+                  <box-icon name='play'color='#ffffff'></box-icon> Filter product in Budget. <br>
+
+                </span>
+
+              </div>
+          
+        </div>
+
+
+
+        <div class="database-container">
+
+          <div class="db-content">
+            <h1> Database & Schema</h1>
+            <span>
+              MongoDB: <br><br>
+              Created Database named "GTA 5" containing 4 Schema ( Carts / User / Products / Orders ). Configured with products and users with Unique IDs (Obj ID) for easy comminication. Schema container varibale values such as emailID, hashed passwords, username, user cart ID, user cart detials, user's purchase history, product id, product name, description, price, category, weight and to be continued.. <br><br>
+              Main Schema:<br>
+              <box-icon name='play'color='#ffffff'></box-icon> Users > obj ID, firstname, lastname, emailid, password(bcrypted), cart ID. <br>
+              <box-icon name='play'color='#ffffff'></box-icon> Products > Obj ID, Title, Description, Type, Price, ImgURL, Seller, Date, adminApproval, Weight, Seats, & Features.<br>
+              <box-icon name='play'color='#ffffff'></box-icon> Carts > Obj ID (User) , items(Array) { Obj ID  (Products) }.<br>
+              <box-icon name='play'color='#ffffff'></box-icon> Orders >  Product Obj, User Obj, Date Time. <br>
+              <br><br>
+
+            </span>
+          </div>
+          <img src="image/about4.png"  class="about4" alt="">
+          <br><br><br>
+          
+        </div>
+
+    </section>
+
+
+    <script>
+    var audio = new Audio();
+    audio.src='audio/click.mp3';
+    var error = new Audio();
+    error.src = 'audio/error.mp3';
+</script>
+
+</body>
+</html>
+

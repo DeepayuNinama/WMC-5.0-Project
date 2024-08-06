@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia | Product Detials</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); 
+*{  
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+     cursor: url(../image/cursor.png), auto;
+ }
+ body{
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     overflow: hidden;
+     background-color: #161418;
+ }
+ #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the video covers the entire background without distortion */
+    z-index: -1; /* Ensure the video is behind all other content */
+}
+ .nav{
+     position: fixed;
+     top: 0;
+     display: flex;
+     justify-content: space-around;
+     width: 100%;
+     height: 100px;
+     line-height: 100px;
+     background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+     z-index: 2;
+ }
+ .nav-logo p{
+     color: white;
+     font-size: 25px;
+     font-weight: 600;
+ }
+ .nav-menu ul{
+     display: flex;
+ }
+ .nav-menu ul li{
+     list-style-type: none;
+ }
+ .nav-menu ul li .link{
+     text-decoration: none;
+     font-weight: 500;
+     color: #fff;
+     padding-bottom: 10px;
+     margin: 0 25px;
+ }
+ .link:hover, .active{
+     border-bottom: 2px solid #fff;
+ }
+ .nav-button .btn{
+     width: 130px;
+     height: 40px;
+     font-weight: 500;
+     background: rgba(255, 255, 255, 0.4);
+     border: none;
+     border-radius: 30px;
+     cursor: pointer;
+     transition: .3s ease;
+ }
+ .btn:hover{
+     background: rgba(255, 255, 255, 0.3);
+ }
+ #registerBtn{
+     margin-left: 15px;
+ }
+ .btn.white-btn{
+     background: rgba(255, 255, 255, 0.7);
+ }
+ .btn.btn.white-btn:hover{
+     background: rgba(255, 255, 255, 0.5);
+ }
+ .nav-menu-btn{
+     display: none;
+ }
+
+ section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+ }
+.container{
+    display: flex;
+    /* align-items: center; */
+    height: 90vh;
+    padding: 30px;
+    margin-top: 50px;
+    width: 70%;
+    min-height: 450px;
+    height: fit-content;
+    background: rgba(145, 145, 145, 0.194);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    gap: 80px;
+    border: 1px solid#8fcbff5c;
+
+}
+
+.left-content{
+    display: grid;
+    align-self: center;
+    color: #fff;
+}
+
+.img-content{
+    margin-bottom: 20px;
+}
+
+.left-content h3{
+    font-size: 2rem;
+    margin-bottom: 5px;
+    transition: 0.5s ease;
+}
+.left-content h3:hover{
+    color: #e3e3e3;
+    font-size: 2.1rem;
+    
+}
+.left-content span{
+    transition: 0.5s ease;
+}
+.left-content span:hover{
+    font-size: 1.05rem;
+}
+
+.content-wrapper{
+    display: grid;
+}
+
+.img-content{
+    height: 300px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}
+.img-content:hover{
+    padding: 0;
+}
+
+.right-content h1{
+    color: #fff;
+    border-bottom: 1px solid#ffffff;
+    padding-top: 13px;
+    margin-bottom: 17px;
+}
+
+.right-content span{
+    color: #eaeaea;
+    font-weight: 500;
+}
+
+/* Btn Style */
+
+.button-cart {
+    align-items: center;
+    appearance: button;
+    background-color: #0276FF;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: "RM Neue",sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 10px 21px;
+    text-align: center;
+    text-transform: none;
+    transition: color .13s ease-in-out,background .13s ease-in-out,opacity .13s ease-in-out,box-shadow .13s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 25px;
+  }
+  
+  .button-cart:active {
+    background-color: #006AE8;
+  }
+  
+  .button-cart:hover {
+    background-color: #1C84FF;
+  }
+    </style>
+
+
+
+    <style>
+.notifications {
+    position: fixed;
+    top: 100px;
+    right: 5px;
+    z-index: 101;
+}
+
+.toast {
+    position: relative;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    border-radius: 5px;
+    --color: #0abf30;
+    background-image: linear-gradient(to right, #0abf3055, #22242f 30%);
+    animation: show 0.3s ease 1 forwards;
+}
+
+.toast i {
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.toast .title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.toast span, .toast i:nth-child(3) {
+    color: #fff;
+    opacity: 0.6;
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-5%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+.toast::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color);
+    width: 100%;
+    height: 3px;
+    content: '';
+    box-shadow: 0 0 10px var(--color);
+    animation: timeOut 5s linear 1 forwards;
+}
+
+@keyframes timeOut {
+    to {
+        width: 0;
+    }
+}
+
+.toast.error {
+    --color: #f24d4c;
+    background-image: linear-gradient(to right, #f24d4c55, #22242F 30%);
+}
+
+.toast.warning {
+    --color: #e9bd0c;
+    background-image: linear-gradient(to right, #e9bd0c55, #22242F 30%);
+}
+
+.toast.info {
+    --color: #3498db;
+    background-image: linear-gradient(to right, #3498db55, #22242F 30%);
+}
+
+.right-content{
+    color: #fff;
+}
+
+span {
+    color: #fff;
+}
+
+.text-content1{
+        position: fixed;
+        display: inline-block;
+        height: 100vh;
+        align-items: center;
+        z-index: -1;
+    }
+
+    .text-content1 h1{
+        font-size: 32rem;
+        margin-left: 25%;
+        color: #ffffff15;
+        transform: translateX(-30%);
+        
+    }
+    
+    .container{
+    
+    ::before{
+      position: fixed;
+      content: "";
+      box-shadow: 0 0 100px 40px #ffffff08;
+      top: -10%;
+      left: -100%;
+      transform: rotate(-45deg);
+      height: 60rem;
+      transition: .7s all;
+
+    }
+    &:hover{
+      border: 1px solid #ffffff22;
+      box-shadow: 0 7px 50px 10px #000000aa;
+      transform: scale(1.015);
+      filter: brightness(1);
+      ::before{
+        filter: brightness(0);
+        top: -100%;
+        left: 200%;
+      }
+    }
+    }
+    
+  
+
+</style>
+</head>
+<body>
+
+    <div class="text-content1">
+        <h1>Mafia</h2>
+    </div>
+
+    <!-- Video -->
+    <video autoplay muted loop id="myVideo">
+        <source src="video/bgvideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="notifications"></div>
+    {{#if successMessage}}
+
+    {{/if}}
+
+    {{#if errorMessage}}
+
+    {{/if}}
+
+
+
+    <!-- Nav Bar -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>Mafia</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="/dashboard" class="link active" onmousedown="error.play();">Product</a></li>
+                <li><a href="/dashboard" class="link " onmousedown="audio.play();">Dashboard</a></li>
+                <li><a href="/sell" class="link " onmousedown="audio.play();">List Product</a></li>
+                <li><a href="/profile" class="link" onmousedown="audio.play();">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section>
+
+        <div class="container">
+
+            <div class="left-content">
+                <img src="/uploads/{{product.imageurl}}" alt="{{product.title}}"  class="img-content">
+                <h3>{{product.title}}</h3>
+                <span>Category: {{product.type}}</span><br>
+                <span>Market Price: ${{product.price}}</span><br>
+            </div>
+
+            <div class="right-content">
+                <h1>Description</h1>
+                <p>{{product.seats}}</p><br>
+                <p>{{product.description}}</p><br>
+                <p>WEIGHT: {{product.weight}} Kg</p><br>
+                <p> FEATURES: <br> {{product.features}}</p><br>
+                <p> USE CASE: <br> {{product.usecasescenario}}</p><br>
+                
+
+                <span>
+                    <!-- Add to Cart Btn -->
+                    <form action="/cart/add" method="POST">
+                        <button class="button-cart" role="button" > Add to Cart</button>
+                    </form>
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        var audio = new Audio();
+        audio.src='audio/click.mp3';
+        var error = new Audio();
+        error.src = 'audio/error.mp3';
+    </script>
+
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const notifications = document.querySelector('.notifications');
+                const successMessage = "{{successMessage}}";    
+                const errorMessage = "{{errorMessage}}";
+
+                function createToast(type, icon, title, text) {
+                    let newToast = document.createElement('div');
+                    newToast.innerHTML = `
+                        <div class="toast ${type}">
+                            <i class="${icon}"></i>
+                            <div class="content">
+                                <div class="title">${title}</div>
+                                <span>${text}</span>
+                            </div>
+                            <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+                        </div>`;
+                    notifications.appendChild(newToast);
+                    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+                }
+
+                if (successMessage) {
+                    createToast('success', 'fa-solid fa-circle-check', 'Success', successMessage);
+                }
+
+                if (errorMessage) {
+                    createToast('error', 'fa-solid fa-circle-exclamation', 'Message', errorMessage);
+                }
+            });
+        </script>
+</body>
+</html>
+
+

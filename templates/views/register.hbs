@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Mafia | Registration</title>
+
+    <style>
+        /* POPPINS FONT */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {  
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            cursor: url(../image/cursor.png), auto;
+        }
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;  
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+            z-index: 1;
+        }
+        .nav-logo p {
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .nav-menu ul {
+            display: flex;
+        }
+        .nav-menu ul li {
+            list-style-type: none;
+        }
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            padding-bottom: 10px;
+            margin: 0 25px;
+        }
+        .link:hover, .active {
+            border-bottom: 2px solid #fff;
+        }
+        .nav-button .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        #registerBtn {
+            margin-left: 15px;
+        }
+        .btn.white-btn {
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .btn.btn.white-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .nav-menu-btn {
+            display: none;
+        }
+        .form-box {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(145, 145, 145, 0.194);
+            backdrop-filter: blur(10px);
+            height: 520px;
+            width: 550px;
+            border-radius: 15px;
+        }
+        .login-container {
+            position: absolute;
+            left: 4px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+            padding-left: 30px;
+        }
+        .register-container {
+            position: absolute;
+            right: -520px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            transition: .5s ease-in-out;
+        }
+        .top span {
+            color: #fff;
+            font-size: small;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .top span a {
+            font-weight: 500;
+            color: #fff;
+            margin-left: 5px;
+        }
+        header {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px 0 30px 0;
+        }
+        .two-forms {
+            display: flex;
+            gap: 10px;
+        }
+        .input-field {
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.265);
+            color: #fff;
+            height: 50px;
+            width: 100%;
+            padding: 0 10px 0 45px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            transition: .2s ease;
+        }
+        .input-field:hover, .input-field:focus {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        ::-webkit-input-placeholder {
+            color: #fff;
+        }
+        .input-box i {
+            position: relative;
+            top: -35px;
+            left: 17px;
+            color: #fff;
+        }
+        .submit {
+            font-size: 15px;
+            font-weight: 500;
+            color: black;
+            height: 45px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+        .submit:hover {
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+        .two-col {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-size: small;
+            margin-top: 10px;
+        }
+        .two-col .one {
+            display: flex;
+            gap: 5px;
+        }
+        .two label a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .two label a:hover {
+            text-decoration: underline;
+        }
+        .form_login {
+            margin-bottom: 470px;
+        }
+        @media only screen and (max-width: 786px) {
+            .nav-button {
+                display: none;
+            }
+            .nav-menu.responsive {
+                top: 100px;
+            }
+            .nav-menu {
+                position: absolute;
+                top: -800px;
+                display: flex;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.2);
+                width: 100%;
+                height: 90vh;
+                backdrop-filter: blur(20px);
+                transition: .3s;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu-btn {
+                display: block;
+            }
+            .nav-menu-btn i {
+                font-size: 25px;
+                color: #fff;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .nav-menu-btn i:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+        @media only screen and (max-width: 540px) {
+            .wrapper {
+                min-height: 100vh;
+            }
+            .form-box {
+                width: 100%;
+                height: 500px;
+            }
+            .register-container, .login-container {
+                width: 100%;
+                padding: 0 20px;
+            }
+            .register-container .two-forms {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        #myVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(50%);
+        }
+        /* Toast Notifications */
+        .notifications {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 9999;
+        }
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .toast.success {
+            background-color: #4caf50;
+        }
+        .toast.error {
+            background-color: #f44336;
+        }
+        .toast i {
+            font-size: 20px;
+        }
+        .toast .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .toast .content .title {
+            font-weight: bold;
+        }
+        .toast .content span {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- video src -->
+<video autoplay muted loop id="myVideo">
+    <source src="video/bgvideo.mp4" type="video/mp4">
+</video>
+
+<div class="notifications"></div>
+
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>Mafia</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="/" class="link" onmousedown="audio.play();">Home</a></li>
+                <li><a href="#"  class="link active" onmousedown="error.play();">Services</a></li>
+                <li><a href="./creators" class="link" onmousedown="audio.play();">Creators</a></li>
+                <li><a href="./about" class="link" onmousedown="audio.play();">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--- Form --->
+    <div class="form-box">
+        <form action="/register" class="form_login" method="POST"> 
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Have an account ? <a href="./login">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname" name="firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname" name="lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Enter your Email" name="emailid">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="create password" name="password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="confirmpassword" name="confirmpassword">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+                <div class="two-col">
+                    <!-- Optional checkbox -->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+    var audio = new Audio();
+    audio.src = 'audio/click.mp3';
+    var error = new Audio();
+    error.src = 'audio/error.mp3';
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const notifications = document.querySelector('.notifications');
+        const successMessage = "{{successMessage}}";
+        const errorMessage = "{{errorMessage}}";
+
+        function createToast(type, icon, title, text) {
+            let newToast = document.createElement('div');
+            newToast.className = `toast ${type}`;
+            newToast.innerHTML = `
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+                <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+            `;
+            notifications.appendChild(newToast);
+            setTimeout(() => newToast.remove(), 5000);
+        }
+
+        if (successMessage && successMessage.trim() !== "") {
+            createToast('success', 'fa-solid fa-circle-check', 'Success', successMessage);
+        }
+
+        if (errorMessage && errorMessage.trim() !== "") {
+            createToast('error', 'fa-solid fa-circle-exclamation', 'Error', errorMessage);
+        }
+    });
+</script>
+</body>
+</html>
