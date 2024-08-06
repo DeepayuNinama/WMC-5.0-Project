@@ -12,8 +12,11 @@ const hbs = require('hbs');
 const paypal = require('paypal-rest-sdk');
 
 const app = express();
-const mongoURL = "mongodb+srv://deepayun:Deepayu@1804@gta.uyc3l4a.mongodb.net/?retryWrites=true&w=majority&appName=GTA";
+const mongoURL = "mongodb+srv://deepayun:2UC6FhXC6BAZ5yO6@wmc5.2yjabxn.mongodb.net/?retryWrites=true&w=majority&appName=WMC5";
 const port = process.env.PORT || 3000;
+
+
+//2UC6FhXC6BAZ5yO6
 
 mongoose.connect(mongoURL)
     .then(() => console.log("Connected to DB"))
