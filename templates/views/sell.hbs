@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia | Sell Product</title>
+    <link rel="stylesheet" href="sell.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: url(../image/cursor.png), auto;
+    
+}
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#myVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index: 100;
+}
+.nav-logo p{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu ul li{
+    list-style-type: none;
+}
+.nav-menu ul li .link{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 10px;
+    margin: 0 25px;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+.nav-button .btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    margin-left: 15px;
+}
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    display: none;
+}
+
+/* Container Box */
+
+.container{
+    margin-left: 445px;
+    margin-top: 130px ;
+    width: 45%;
+    height: 522px;  
+    padding-left: 50px;
+    background: rgba(145, 145, 145, 0.194);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding-top: 15px;
+    
+}
+
+.container h2{
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+
+.input-field{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.265);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.input-submit-box{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.265);
+    color: #fff;
+    height: 50px;
+    width: 120px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+    align-items: center;
+    justify-content: center;
+    margin-left: 160px;
+}
+
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+
+.input-box{
+    width: 280px;
+    margin-inline-end: 30px;
+}
+
+.input-field::placeholder {
+    color: rgb(255, 255, 255); /* You can adjust the opacity as needed */
+}
+
+.categorySelect{
+    color: #fff;
+}
+.radiobtn{
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+
+.linebar{
+    width: 610px;
+    height: 1px;
+    background: #ffffffa0;
+    margin-bottom: 15px;
+    
+}
+
+.linebar2{
+    height: 150px;
+    width: 1px;
+    background: #ffffffa0;
+    margin-top: 18px;
+    margin-left: 15px;
+}
+/* Try */
+
+.radio-tile-group h4{
+    font-weight: 500;
+    color: #fff;
+    padding-top: 25px;
+    margin-right: 20px;
+}
+.radio-tile-group {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  
+  .input-container {
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    margin: 1.2rem;
+  }
+  
+  .input-container input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+  }
+  
+  .input-container .radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: all 300ms ease;
+  }
+  
+  .input-container ion-icon {
+    color: #ffffff;
+    font-size: 3rem;
+  }
+  
+  .input-container label {
+    color: #fff;
+    font-size: 0.80rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+ 
+  input:hover+.radio-tile {
+    color: antiquewhite;
+  }
+  
+  input:checked+.radio-tile ion-icon,
+  input:checked+.radio-tile label {
+    color: #131924;
+  }
+
+  .allContent{
+    display: flex;
+  }
+
+  .uploadimg{
+    display: flex;
+  }
+
+  h3{
+    color: #fff;
+  }
+
+  input[type=file]{
+    display: none;
+  }
+
+  .uploadBtn {
+    height: 100px;
+    width: 150px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px dashed #fff;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
+  .uploadBtn:hover{
+    color: #131924;
+    border: 1px dashed #131924;
+  }
+
+
+
+  .container1 {
+	max-width: 250px;
+	width: 100%;
+    height: 200px;
+	background: #ffffff61;
+	padding: 30px;
+	border-radius: 30px;
+    margin-left: 30px;
+}
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	background: #131924af;
+	margin-bottom: 30px;
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.img-area .icon {
+	font-size: 40px;
+    color: #fff;
+}
+.img-area h3 {
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 6px;
+    color: #fff;
+}
+.img-area p {
+    font-size: 10px;
+	color: #fff;
+    padding-bottom: 10px;
+}
+.img-area p span {
+	font-weight: 500;
+}
+.img-area img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: 100;
+}
+.img-area::before {
+	content: attr(data-img);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	opacity: 0;
+	transition: all .3s ease;
+	z-index: 200;
+}
+.img-area.active:hover::before {
+	opacity: 1;
+}
+.select-image {
+	display: block;
+	width: 100%;
+	border-radius: 15px;
+	background: var(--blue);
+	color: #fff;
+	font-weight: 500;
+	font-size: 18px;
+	border: none;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+.select-image:hover {
+	background: var(--dark-blue);
+}
+
+.input-submit-box:hover{
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        .alert {
+            top: 122px;
+            right: 30px;
+            text-align: center;
+            padding: 15px;
+            width: fit-content;
+            background-color: #6375ffb5;
+            color: white;
+            border-radius: 5px;
+            z-index: 2;
+            padding: 20px;
+            position: fixed;
+            right: 20px;
+            animation: slideIn 0.5s forwards, slideOut 0.5s 4.5s forwards; /* Slide in and out */
+        }
+
+        .alert.success {
+            background-color: #4CAF50;
+        }
+
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        line-height: normal;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+        padding: 20px;
+        height: auto;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .two-forms {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .input-box {
+        width: 100%;
+        margin-inline-end: 0;
+    }
+
+    .linebar {
+        width: 100%;
+    }
+
+    .radio-tile-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-container {
+        width: auto;
+        margin: 10px 0;
+    }
+
+    .allContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linebar2 {
+        display: none;
+    }
+
+    .container1 {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .img-area {
+        height: auto;
+    }
+
+    .uploadBtn {
+        width: 100%;
+        height: 50px;
+        margin-left: 0;
+    }
+
+    .input-submit-box {
+        margin: 20px auto;
+        display: block;
+        width: 100%;
+    }
+
+    .toast {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+}
+
+/* Additional Media Query for Smaller Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .nav {
+        padding: 10px 0;
+    }
+
+    .nav-logo p {
+        font-size: 20px;
+    }
+
+    .nav-button .btn {
+        width: 100px;
+        height: 30px;
+    }
+
+    .radio-tile-group h4 {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .uploadBtn {
+        height: 40px;
+    }
+
+    .img-area h3 {
+        font-size: 12px;
+    }
+
+    .img-area p {
+        font-size: 8px;
+    }
+}
+
+</style>
+
+
+<style>
+.notifications {
+    position: fixed;
+    top: 100px;
+    right: 5px;
+    z-index: 101;
+}
+
+.toast {
+    position: relative;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    border-radius: 5px;
+    --color: #0abf30;
+    background-image: linear-gradient(to right, #0abf3055, #22242f 30%);
+    animation: show 0.3s ease 1 forwards;
+}
+
+.toast i {
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.toast .title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.toast span, .toast i:nth-child(3) {
+    color: #fff;
+    opacity: 0.6;
+}
+
+@keyframes show {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-5%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+.toast::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color);
+    width: 100%;
+    height: 3px;
+    content: '';
+    box-shadow: 0 0 10px var(--color);
+    animation: timeOut 5s linear 1 forwards;
+}
+
+@keyframes timeOut {
+    to {
+        width: 0;
+    }
+}
+
+.toast.error {
+    --color: #f24d4c;
+    background-image: linear-gradient(to right, #f24d4c55, #22242F 30%);
+}
+
+.toast.warning {
+    --color: #e9bd0c;
+    background-image: linear-gradient(to right, #e9bd0c55, #22242F 30%);
+}
+
+.toast.info {
+    --color: #3498db;
+    background-image: linear-gradient(to right, #3498db55, #22242F 30%);
+}
+
+
+</style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="myVideo">
+        <source src="video/bgvideo.mp4" type="video/mp4">
+    </video>
+
+    <div class="notifications"></div>
+    {{#if successMessage}}
+
+    {{/if}}
+
+    {{#if errorMessage}}
+
+    {{/if}}
+
+    <!-- Header -->
+    <header class="nav">
+        <div class="nav-logo">
+            <p>Mafia</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="/dashboard" class="link" onmousedown="audio.play();">Dashboard</a></li>
+                <li><a href="#" class="link active" onmousedown="error.play();">List Product</a></li>
+                <li><a href="/profile" class="link" onmousedown="audio.play();">Profile</a></li>
+                
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>List Your Product</h2>
+        <form action="/sell" method="POST" enctype="multipart/form-data">
+        <div class="two-forms">
+            <div class="input-box">
+                <input type="date" class="input-field" placeholder="date" name="date">
+                <i class='bx bx-calendar-alt'></i>
+            </div>
+            <div class="input-box">
+                <!-- submit btn -->
+                <button class="input-submit-box">SUBMIT</button>
+            </div>
+        </div>
+
+        <div class="radio-tile-group">
+            <h4>Select <br>Category</h4>
+            <div class="input-container">
+              <input id="walk" type="radio" name="type" value="Luxury Cars">
+              <div class="radio-tile">
+                <ion-icon name="car-sport"></ion-icon>
+                <label for="walk">Car</label>
+              </div>
+            </div>
+    
+            <div class="input-container">
+              <input id="bike" type="radio" name="type" value="Bike">
+              <div class="radio-tile">
+                <ion-icon name="bicycle"></ion-icon>
+                <label for="bike">Bike</label>
+              </div>
+            </div>
+    
+            <div class="input-container">
+              <input id="car" type="radio" name="type" value="Weapon">
+              <div class="radio-tile">
+                <ion-icon name="hammer"></ion-icon>
+                <label for="car">Weapon</label>
+              </div>
+            </div>
+    
+            <div class="input-container">
+              <input id="fly" type="radio" name="type" value="Aircraft">
+              <div class="radio-tile">
+                <ion-icon name="airplane"></ion-icon>
+                <label for="fly">Aircraft</label>
+              </div>
+            </div>
+
+            <div class="input-container">
+                <input id="fly" type="radio" name="type" value="Penthouse">
+                <div class="radio-tile">
+                    <ion-icon name="home"></ion-icon>
+                  <label for="fly">Penthouse</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="linebar"></div>
+
+        <div class="allContent">
+            <div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="product name" name="title">
+                    <i class='bx bx-text' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="number" class="input-field" placeholder="price" name="price">
+                    <i class='bx bx-money'></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="description" name="description">
+                    <i class='bx bx-rename' ></i>
+                </div>
+            </div>
+
+            <div class="linebar2"></div>
+
+            <div class="container1">
+                <input type="file" id="file" name="image" accept="image/*" hidden>
+                <div class="img-area" data-img="">
+                    <i class='bx bxs-cloud-upload icon'></i>
+                    <h3>Upload Image</h3>
+                    <p>Image size must be less than <span>10MB</span></p>
+                </div>
+                <button type="button" class="select-image">Select Image</button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+    <script>
+        const selectImage = document.querySelector('.select-image');
+        const inputFile = document.querySelector('#file');
+        const imgArea = document.querySelector('.img-area');
+
+        selectImage.addEventListener('click', function () {
+            inputFile.click();
+        });
+
+        inputFile.addEventListener('change', function () {
+            const image = this.files[0];
+            if (image.size < 10000000) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const allImg = imgArea.querySelectorAll('img');
+                    allImg.forEach(item => item.remove());
+                    const imgUrl = reader.result;
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    imgArea.appendChild(img);
+                    imgArea.classList.add('active');
+                    imgArea.dataset.img = image.name;
+                };
+                reader.readAsDataURL(image);
+            } else {
+                alert("Image size more than 10MB");
+            }
+        });
+    </script>
+
+    <script>
+        var audio = new Audio();
+        audio.src='audio/click.mp3';
+        var error = new Audio();
+        error.src = 'audio/error.mp3';
+    </script>
+
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const notifications = document.querySelector('.notifications');
+                const successMessage = "{{successMessage}}";    
+                const errorMessage = "{{errorMessage}}";
+
+                function createToast(type, icon, title, text) {
+                    let newToast = document.createElement('div');
+                    newToast.innerHTML = `
+                        <div class="toast ${type}">
+                            <i class="${icon}"></i>
+                            <div class="content">
+                                <div class="title">${title}</div>
+                                <span>${text}</span>
+                            </div>
+                            <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+                        </div>`;
+                    notifications.appendChild(newToast);
+                    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+                }
+
+                if (successMessage) {
+                    createToast('success', 'fa-solid fa-circle-check', 'Success', successMessage);
+                }
+
+                if (errorMessage) {
+                    createToast('error', 'fa-solid fa-circle-exclamation', 'Message', errorMessage);
+                }
+            });
+        </script>
+
+
+                <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const notifications = document.querySelector('.notifications');
+                const successMessage = "{{successMessage}}";    
+                const errorMessage = "{{errorMessage}}";
+
+                function createToast(type, icon, title, text) {
+                    let newToast = document.createElement('div');
+                    newToast.innerHTML = `
+                        <div class="toast ${type}">
+                            <i class="${icon}"></i>
+                            <div class="content">
+                                <div class="title">${title}</div>
+                                <span>${text}</span>
+                            </div>
+                            <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+                        </div>`;
+                    notifications.appendChild(newToast);
+                    newToast.timeOut = setTimeout(() => newToast.remove(), 5000);
+                }
+
+                if (successMessage) {
+                    createToast('success', 'fa-solid fa-circle-check', 'Success', successMessage);
+                }
+
+                if (errorMessage) {
+                    createToast('error', 'fa-solid fa-circle-exclamation', 'Message', errorMessage);
+                }
+            });
+        </script>
+
+
+</body>
+</html>
